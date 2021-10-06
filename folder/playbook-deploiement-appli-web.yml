@@ -17,7 +17,7 @@
         auto_remove: true
         env:
           DB_USER: userexample
-          DB_PASS: '{{ DB_PASS }}'
+          DB_PASS: passwordexample
           DB: ambientit
           DB_HOST: db-ansible
         state: present
@@ -61,13 +61,7 @@
             - dbVolumeAnsible:/var/lib/postgresql/data
           env:
             POSTGRES_USER: userexample
-            POSTGRES_PASSWORD: "!vault |
-              $ANSIBLE_VAULT;1.1;AES256
-              35613736646466316136353262346539386636653931356432646162306532613830326161346434
-              6566303538373835306631613066633037396436393331390a613339336631623064333562656534
-              63306230653938356534383837376461653963313664626138613663323336653964366531666330
-              3838353437316265660a303736363938343032356433373162303038353331343738336636316635
-              6462"
+            POSTGRES_PASSWORD: passwordexample
             POSTGRES_DB: ambientit
 
 
